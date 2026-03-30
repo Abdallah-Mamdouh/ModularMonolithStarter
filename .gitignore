@@ -1,0 +1,46 @@
+﻿# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build Folders
+bin/
+obj/
+Debug/
+Release/
+
+# Rider, Resharper
+.idea/
+*.DotSettings.user
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.assets.json
+*.nuget.props
+*.nuget.targets
+*.nupkg.metadata
+*.snupkg
+
+# Logs
+*.log
+
+# Generated files
+*.dll
+*.pdb
+*.exe
+*.cache
+*.deps.json
+*.csproj.nuget.*
+*.AssemblyInfo.cs
+*.g.cs
+*.editorconfig
+
+# OS Files
+Thumbs.db
+.DS_Store
+Logs/
+/PublishLogs
