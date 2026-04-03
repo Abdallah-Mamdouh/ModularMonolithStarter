@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Shared.Data.Seed;
 
 namespace Shared.Data
 {
@@ -10,7 +11,21 @@ namespace Shared.Data
         {
             MigrateDatabaseAsync<TContext>(app.ApplicationServices).GetAwaiter().GetResult();
 
+            SeedDataAsync(app.ApplicationServices).GetAwaiter().GetResult();
+
             return app;
+        }
+
+        private static async Task SeedDataAsync(IServiceProvider serviceProvider)
+        {
+            using var scope = serviceProvider.CreateScope();
+
+            var seeders = scope.ServiceProvider.GetServices<IDataSeed>();
+
+            foreach ( var seeder in seeders)
+            {
+                await seeder.SeedAllAsync();
+            }
         }
 
         private static async Task MigrateDatabaseAsync<TContext>(IServiceProvider serviceProvider) where TContext : DbContext
