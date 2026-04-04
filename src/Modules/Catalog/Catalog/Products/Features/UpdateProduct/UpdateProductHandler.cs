@@ -1,4 +1,5 @@
 ﻿
+
 namespace Catalog.Products.Features.UpdateProduct
 {
     public record UpdateProductCommand(ProductDto Product) : ICommand<UpdateProductResult>;
@@ -7,9 +8,37 @@ namespace Catalog.Products.Features.UpdateProduct
 
     internal class UpdateProductHandler(CatalogDbContext catalogDbContext) : ICommandHandler<UpdateProductCommand, UpdateProductResult>
     {
-        public Task<UpdateProductResult> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
+        public async Task<UpdateProductResult> Handle(UpdateProductCommand command, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            // update product entity from command
+            // save product to database
+            // return result with new product id
+
+            var product = await catalogDbContext.Products
+                .FindAsync([command.Product.Id], cancellationToken);
+
+            if (product is null)
+            {
+                throw new Exception($"Product not found :{command.Product.Id}");
+            }
+
+            UpdateProductWithNewValue(product, command.Product);
+
+            catalogDbContext.Products.Update(product);
+            await catalogDbContext.SaveChangesAsync();
+
+            return new UpdateProductResult(true);
+        }
+
+        private void UpdateProductWithNewValue(Product product, ProductDto productDto)
+        {
+            product.Update(
+                    productDto.Id,
+                    productDto.Name,
+                    productDto.Categories,
+                    productDto.Description,
+                    productDto.ImageFile,
+                    productDto.Price);
         }
     }
 }
