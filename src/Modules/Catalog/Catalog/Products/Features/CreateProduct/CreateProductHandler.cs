@@ -16,8 +16,7 @@
         }
     }
 
-    internal class CreateProductHandler(CatalogDbContext catalogDbContext,
-        ILogger<CreateProductHandler> logger) 
+    internal class CreateProductHandler(CatalogDbContext catalogDbContext)
         : ICommandHandler<CreateProductCommand, CreateProductResult>
     {
         public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
@@ -26,10 +25,6 @@
             // save product to database
             // return result with new product id
 
-            // logging part
-            logger.LogInformation("CreateProductCommandHandler.Handle with command {@Command}", command);
-
-            // actual logic part
             var product = CreateNewProduct(command.Product);
 
             catalogDbContext.Products.Add(product);
