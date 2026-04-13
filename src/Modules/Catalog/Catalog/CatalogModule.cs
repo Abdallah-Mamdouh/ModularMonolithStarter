@@ -16,14 +16,6 @@ namespace Catalog
             // Api endpoint services
 
             // Application use case services
-            services.AddMediatR(config =>
-            {
-                config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-                config.AddOpenBehavior(typeof(ValidationBehavior<,>));
-                config.AddOpenBehavior(typeof(LoggingBehavior<,>));
-            });
-
-            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             // Data - infrastructure services
             var connectionString = configuration.GetConnectionString("DefaultConnection");

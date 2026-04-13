@@ -3,9 +3,21 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((context, config) =>
     config.ReadFrom.Configuration(context.Configuration));
 
-builder.Services
-    .AddCarterWithAssemplies(typeof(CatalogModule).Assembly);
+// common services
+var catalogAssembly = typeof(CatalogModule).Assembly;
+var basketAssembly = typeof(BasketModule).Assembly;
 
+builder.Services
+    .AddCarterWithAssemblies(
+        catalogAssembly,
+        basketAssembly);
+
+builder.Services
+    .AddMediatRAssemblies(
+        catalogAssembly,
+        basketAssembly);
+
+// modules services
 builder.Services
     .AddCatalogModule(builder.Configuration)
     .AddBasketModule(builder.Configuration)
