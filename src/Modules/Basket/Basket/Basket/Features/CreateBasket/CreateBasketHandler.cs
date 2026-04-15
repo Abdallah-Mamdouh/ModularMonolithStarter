@@ -12,19 +12,13 @@
         }
     }
 
-    internal class CreateBasketHandler(BasketDbContext basketDbContext) : ICommandHandler<CreateBasketCommand, CreateBasketResult>
+    internal class CreateBasketHandler(IBasketRepository basketRepository) : ICommandHandler<CreateBasketCommand, CreateBasketResult>
     {
         public async Task<CreateBasketResult> Handle(CreateBasketCommand command, CancellationToken cancellationToken)
         {
-            // create basket entity from command
-            // save basket to database
-            // return result with new basket id
-
             var shoppingCart = CreateShoppingCart(command.ShoppingCart);
 
-            basketDbContext.ShoppingCarts.Add(shoppingCart);
-
-            await basketDbContext.SaveChangesAsync(cancellationToken);
+            await basketRepository.CreateBasket(shoppingCart, cancellationToken);
 
             return new CreateBasketResult(shoppingCart.Id);
         }
