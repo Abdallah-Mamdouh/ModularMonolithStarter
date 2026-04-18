@@ -8,17 +8,19 @@
 
   <ItemGroup>
     <Compile Remove="Basket\EventHandlers\**" />
+    <Compile Remove="Basket\Features\CheckOutBasket\**" />
+    <Compile Remove="Basket\Features\UpdateItemPriceInBasket\**" />
     <EmbeddedResource Remove="Basket\EventHandlers\**" />
+    <EmbeddedResource Remove="Basket\Features\CheckOutBasket\**" />
+    <EmbeddedResource Remove="Basket\Features\UpdateItemPriceInBasket\**" />
     <None Remove="Basket\EventHandlers\**" />
+    <None Remove="Basket\Features\CheckOutBasket\**" />
+    <None Remove="Basket\Features\UpdateItemPriceInBasket\**" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Shared\Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Basket\Features\CheckOutBasket\" />
-    <Folder Include="Basket\Features\UpdateItemPriceInBasket\" />
+    <ProjectReference Include="..\..\Catalog\Catalog.Contracts\Catalog.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
