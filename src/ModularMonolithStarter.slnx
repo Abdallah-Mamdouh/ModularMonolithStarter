@@ -1,6 +1,6 @@
 <Solution>
   <Folder Name="/Bootstrapper/">
-    <Project Path="Bootstrapper/Api/Host.csproj" Id="2b64529d-bbd4-4d3b-b9c5-586ddcf02f56" />
+    <Project Path="Bootstrapper/Host/Host.csproj" />
   </Folder>
   <Folder Name="/Modules/" />
   <Folder Name="/Modules/Basket/">
