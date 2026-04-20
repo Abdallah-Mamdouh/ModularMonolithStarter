@@ -22,10 +22,20 @@ namespace Shared.Messagaing.Extentions
                 config.AddSagas(assemblies);
                 config.AddActivities(assemblies);
 
-                config.UsingInMemory((context, configuration) =>
+                config.UsingRabbitMq((context, configurator) =>
                 {
-                    configuration.ConfigureEndpoints(context);
+                    configurator.Host(new Uri(configuration["MessageBroker:Host"]!), host =>
+                    {
+                        host.Username(configuration["MessageBroker:UserName"]!);
+                        host.Password(configuration["MessageBroker:Password"]!);
+                    });
+                    configurator.ConfigureEndpoints(context);
                 });
+
+                //config.UsingInMemory((context, configuration) =>
+                //{
+                //    configuration.ConfigureEndpoints(context);
+                //});
             });
 
             return services;
