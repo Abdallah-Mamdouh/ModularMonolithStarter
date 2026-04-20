@@ -1,4 +1,4 @@
-# 🚀 Modular Monolith Starter (.NET 8)
+# 🚀 Modular Monolith Starter
 
 ## 📌 Overview
 
