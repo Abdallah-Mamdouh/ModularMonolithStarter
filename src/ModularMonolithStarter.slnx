@@ -11,7 +11,7 @@
     <Project Path="Modules/Catalog/Catalog/Catalog.csproj" Id="a9ed37c8-4425-45b7-9996-05e710ac3079" />
   </Folder>
   <Folder Name="/Modules/Ordering/">
-    <Project Path="Ordering/Ordering/Ordering.csproj" Id="f6b602cb-104d-41f7-8d23-8f95901213a6" />
+    <Project Path="Modules/Ordering/Ordering.csproj" Id="6413d908-7d51-47a9-b4e4-2403d8ce5dd5" />
   </Folder>
   <Folder Name="/Shared/">
     <Project Path="Shared/Shared.Contracts/Shared.Contracts.csproj" />
