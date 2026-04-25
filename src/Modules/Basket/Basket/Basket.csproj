@@ -7,13 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Basket\Features\CheckOutBasket\**" />
-    <EmbeddedResource Remove="Basket\Features\CheckOutBasket\**" />
-    <None Remove="Basket\Features\CheckOutBasket\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Shared\Shared.Messagaing\Shared.Messagaing.csproj" />
+    <ProjectReference Include="..\..\..\Shared\Shared.Messaging\Shared.Messaging.csproj" />
     <ProjectReference Include="..\..\..\Shared\Shared\Shared.csproj" />
     <ProjectReference Include="..\..\Catalog\Catalog.Contracts\Catalog.Contracts.csproj" />
   </ItemGroup>
