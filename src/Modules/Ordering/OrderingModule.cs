@@ -18,7 +18,7 @@ public static class OrderingModule
         // 2. Application Use Case services        
 
         // 3. Data - Infrastructure services
-        var connectionString = configuration.GetConnectionString("Database");
+        var connectionString = configuration.GetConnectionString("DefaultConnection");
 
         services.AddScoped<ISaveChangesInterceptor, AuditableEntityInterceptor>();
         services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
