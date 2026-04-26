@@ -15,7 +15,7 @@ public class CreateBasketEndpoint : ICarterModule
             var userName = user.Identity!.Name;
             var updatedShoppingCart = request.ShoppingCart with { UserName = userName };
 
-            var command = request.Adapt<CreateBasketCommand>();
+            var command = new CreateBasketCommand(updatedShoppingCart);
 
             var result = await sender.Send(command);
 
