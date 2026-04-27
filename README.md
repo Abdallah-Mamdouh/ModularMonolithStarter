@@ -1,6 +1,6 @@
-# 🚀 Modular Monolith Starter
+# Modular Monolith Starter
 
-## 📌 Overview
+## Overview
 
 This repository implements a production-oriented backend system built with .NET 8 and ASP.NET Core Minimal APIs.
 
@@ -12,7 +12,7 @@ It showcases how to build a maintainable, modular, and extensible system using r
 
 ---
 
-## 🏗 Architecture Overview
+## Architecture Overview
 
 ### Core Architectural Patterns
 
@@ -26,7 +26,7 @@ It showcases how to build a maintainable, modular, and extensible system using r
 
 ---
 
-## 🔄 Communication Patterns
+## Communication Patterns
 
 ### Synchronous Communication
 - In-process module-to-module calls via public APIs
@@ -36,7 +36,7 @@ It showcases how to build a maintainable, modular, and extensible system using r
 
 ---
 
-## 🔐 Security
+## Security
 
 - Keycloak Identity Provider
 - OAuth2 & OpenID Connect
@@ -45,9 +45,9 @@ It showcases how to build a maintainable, modular, and extensible system using r
 
 ---
 
-## 🧩 Modules
+## Modules
 
-### 🛒 Catalog Module
+### Catalog Module
 - ASP.NET Core Minimal APIs (.NET 8)
 - Vertical Slice Architecture (Feature-based structure)
 - CQRS with MediatR
@@ -57,7 +57,7 @@ It showcases how to build a maintainable, modular, and extensible system using r
 
 ---
 
-### 🧺 Basket Module
+### Basket Module
 - DDD + CQRS + Vertical Slices
 - Redis Distributed Cache
 - Cache-aside / Proxy / Decorator patterns
@@ -66,7 +66,7 @@ It showcases how to build a maintainable, modular, and extensible system using r
 
 ---
 
-### 🔐 Identity Module
+### Identity Module
 - Keycloak integration for authentication & authorization
 - OAuth2 / OpenID Connect flows
 - Docker-based Keycloak setup
@@ -74,7 +74,7 @@ It showcases how to build a maintainable, modular, and extensible system using r
 
 ---
 
-### 📦 Ordering Module
+### Ordering Module
 - Handles checkout workflow
 - DDD + CQRS + Vertical Slice Architecture
 - Outbox Pattern for reliable event processing
@@ -82,7 +82,7 @@ It showcases how to build a maintainable, modular, and extensible system using r
 
 ---
 
-## ⚙️ Cross-Cutting Concerns
+## Cross-Cutting Concerns
 
 - Logging: Serilog  
 - Validation: MediatR Pipeline Behaviors  
@@ -92,7 +92,7 @@ It showcases how to build a maintainable, modular, and extensible system using r
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - .NET 8 / C# 12
 - ASP.NET Core Minimal APIs
@@ -105,7 +105,7 @@ It showcases how to build a maintainable, modular, and extensible system using r
 
 ---
 
-## 📦 Design Patterns Used
+## Design Patterns Used
 
 - CQRS
 - Vertical Slice Architecture
