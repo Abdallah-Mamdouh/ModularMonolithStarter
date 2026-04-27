@@ -118,7 +118,7 @@ It showcases how to build a maintainable, modular, and extensible system using r
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - Migration to Microservices using Strangler Fig Pattern
 - Payments Module
