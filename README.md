@@ -1,4 +1,4 @@
-# Modular Monolith Starter (.NET 8)
+# Modular Monolith Starter
 
 A production-ready backend architecture starter built with modern .NET technologies and best practices.
 
